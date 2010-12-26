@@ -16,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(PROJECT_ROOT_PATH, 'meu_blog.db'),
+        'NAME': os.path.join(PROJECT_ROOT_PATH, 'blog.db'),
         'USER': '',
         'PASSWORD': '',
         'HOST': '',
@@ -67,7 +67,7 @@ MIDDLEWARE_CLASSES = (
     'pagination.middleware.PaginationMiddleware',
 )
 
-ROOT_URLCONF = 'meu_blog.urls'
+ROOT_URLCONF = 'blog.urls'
 
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT_PATH, 'templates'),
