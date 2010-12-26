@@ -1,0 +1,12 @@
+{% load pagination_tags %}
+<html>
+  <body>
+    {% autopaginate posts 5 %}
+    {% for post in posts %}
+      {{ post.titulo }} <br>
+      {{ post.conteudo }} <br>
+      {{ post.publicacao }} <br>
+    {% endfor %}
+    {% paginate %}
+  </body>
+</html>
