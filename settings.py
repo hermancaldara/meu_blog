@@ -17,7 +17,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(PROJECT_ROOT_PATH, 'meu_blog.db'),
-        'USER': ''
+        'USER': '',
         'PASSWORD': '',
         'HOST': '',
         'PORT': '',
