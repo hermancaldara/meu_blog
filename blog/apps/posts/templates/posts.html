@@ -6,6 +6,9 @@
       {{ post.titulo }} <br>
       {{ post.conteudo }} <br>
       {{ post.publicacao }} <br>
+      {% for tag in post.tags.iterator %}
+        {{ tag.name }}
+      {% endfor %}
     {% endfor %}
     {% paginate %}
   </body>
