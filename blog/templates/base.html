@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="description" content="Blog do Herman Caldara"/>
+    <meta name="keywords" content="Herman Caldara, site, blog, desenvolvimento, programação"/>
+    <meta name="author" content="Herman Caldara" />
+    
+    <title>{% block title %}Blog do Herman Caldara{% endblock title %}</title>
+    
+    {% block styles %}
+      <link rel="stylesheet" href="{{ MEDIA_URL }}/css/base.css" type="text/css">
+    {% endblock styles %}
+    
+    {% block scripts %}
+    {% endblock scripts %}
+  </head>
+  <body>
+    <div id="tudo">
+      <div id="topo">
+        <div id="logo">
+        </div>
+        </div id="menu">
+          <ul>
+            <li>Home</li>
+            <li>Projetos</li>
+            <li>Social</li>
+            <li>Sobre</li>
+            <li>Contato</li>
+          </ul>
+        </div>
+      </div>
+      <div id="conteudo">
+        {% block conteudo %}
+        {% endblock conteudo %}
+      </div>
+      <div id="footer">
+        © Copyright 2010 por Herman Caldara
+      </div>
+    </div>
+  </body>
+</html>
+
