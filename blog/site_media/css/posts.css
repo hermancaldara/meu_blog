@@ -1,0 +1,32 @@
+#post {
+    margin-bottom: 50px;
+}
+
+#post #titulo {
+    color: black;    
+}
+
+#post #titulo:hover {
+    color: gray;    
+}
+
+#post a:link, #post a:visited {
+    color: black;
+}
+
+#post a:hover {
+    color: gray;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    color: black;
+}
+
+.pagination a:hover {
+    color: gray;
+}

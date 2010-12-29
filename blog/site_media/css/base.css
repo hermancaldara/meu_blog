@@ -8,7 +8,7 @@ body {
 }
 
 #topo #logo span {
-    font-size: 30px;
+    font-size: 60px;
 }
 
 #menu {
@@ -41,7 +41,6 @@ body {
 
 #rodape {
     margin-top: 20px;
-    float: right;
     font-size: 10px;
-    margin-right: 50px;
+    text-align: center;
 }
