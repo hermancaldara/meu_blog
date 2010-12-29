@@ -1,0 +1,47 @@
+body {
+    font-family: Monaco, Arial;
+}
+
+#tudo {
+    margin: 40px auto;
+    width: 650px;  
+}
+
+#topo #logo span {
+    font-size: 30px;
+}
+
+#menu {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#menu ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+#menu ul li {
+    display: inline;
+}
+
+#menu ul li a {
+    text-decoration: none;
+}
+
+#menu ul li a:link, #menu ul li a:visited {
+    color: black;
+}
+
+#menu ul li a:hover {
+    color: gray;
+    text-decoration: underline;
+}
+
+#rodape {
+    margin-top: 20px;
+    float: right;
+    font-size: 10px;
+    margin-right: 50px;
+}
