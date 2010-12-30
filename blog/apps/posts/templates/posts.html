@@ -10,7 +10,7 @@
   {% autopaginate posts 5 %}
   {% for post in posts %}
     <div id="post">
-      <a id="titulo" href=""><h1>{{ post.titulo }}</h1></a>
+      <a id="titulo" href="{{ post.id }}"><h1>{{ post.titulo }}</h1></a>
       {{ post.conteudo|linebreaks }}
       {{ post.publicacao|timesince }} 
       {% if post.tags.all %}

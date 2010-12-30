@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block styles %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/post.css">
+{% endblock styles %}
+
+{% block conteudo %}
+  <div id="post">
+    <a id="titulo" href="{{ post.id }}"><h1>{{ post.titulo }}</h1></a>
+    {{ post.conteudo|linebreaks }}
+    {{ post.publicacao|timesince }} 
+    {% if post.tags.all %}
+      | 
+      {% for tag in post.tags.iterator %}
+        {% if not forloop.last %}
+          <a href="{{ tag.name }}">{{ tag.name }}</a> -
+        {% else %}      
+          <a href="{{ tag.name }}">{{ tag.name }}</a>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endblock conteudo %}

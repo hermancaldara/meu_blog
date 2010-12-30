@@ -1,0 +1,15 @@
+#post #titulo {
+    color: black;    
+}
+
+#post #titulo:hover {
+    color: gray;    
+}
+
+#post a:link, #post a:visited {
+    color: black;
+}
+
+#post a:hover {
+    color: gray;
+}
