@@ -8,12 +8,12 @@
     
     <title>{% block titulo %}Blog do Herman Caldara{% endblock titulo %}</title>
     
-    {% block styles %}
+    {% block estilo %}
       <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/base.css">
-    {% endblock styles %}
+    {% endblock estilo %}
     
-    {% block scripts %}
-    {% endblock scripts %}
+    {% block script %}
+    {% endblock script %}
   </head>
   <body>
     <div id="tudo">
@@ -24,10 +24,10 @@
         <div id="menu">
           <ul>
             <li><a href="/">Home</a> //</li>
-            <li><a href="projetos">Projetos</a> //</li>
-            <li><a href="social">Social</a> //</li>
-            <li><a href="sobre">Sobre</a> //</li>
-            <li><a href="contato">Contato</a></li>
+            <li><a href="/projetos">Projetos</a> //</li>
+            <li><a href="/social">Social</a> //</li>
+            <li><a href="/sobre">Sobre</a> //</li>
+            <li><a href="/contato">Contato</a></li>
           </ul>
         </div>
       </div>

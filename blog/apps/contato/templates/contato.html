@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block estilo %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/contato.css">
+{% endblock estilo %}
+
+{% block titulo %}Contato - {{ block.super }}{% endblock titulo %}
+
+{% block conteudo_esquerdo %}
+  {% if contato_realizado %}
+    <h3>{{ contato_realizado }}</h3>
+  {% else %}
+    <h3>Envie o seu contato!</h3>
+  {% endif %}
+  <form method="post" action="">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.name|capfirst }}<br/>
+        {{ field }}<br/>
+      </p>
+    {% endfor %}
+    <input type="submit">
+  </form>
+{% endblock conteudo_esquerdo %}
