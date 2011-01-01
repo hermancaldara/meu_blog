@@ -1,6 +1,7 @@
 from django.conf.urls.defaults import *
 from django.contrib import admin
 from django.conf import settings
+from django.views.generic.simple import direct_to_template
 
 
 admin.autodiscover()
@@ -10,6 +11,7 @@ urlpatterns = patterns('',
     (r'^', include('posts.urls')),
     (r'^comentarios/', include('django.contrib.comments.urls')),
     (r'^contato/', include('contato.urls')),
+    (r'^sobre/', direct_to_template, {'template': 'sobre.html'}),
     (r'^site_media/(.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 )
