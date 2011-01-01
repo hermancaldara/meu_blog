@@ -4,7 +4,11 @@ body {
 
 #tudo {
     margin: 40px auto;
-    width: 650px;  
+    width: 700px;  
+}
+
+#topo {
+    text-align: center;
 }
 
 #topo #logo span {
@@ -39,8 +43,15 @@ body {
     text-decoration: underline;
 }
 
+#esquerda {
+    position: relative;
+    width: 500px;
+    float: left;
+}
+
 #rodape {
     margin-top: 20px;
     font-size: 10px;
     text-align: center;
+    clear: both;
 }

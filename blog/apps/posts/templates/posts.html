@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
+{% load comments %}
+
 {% block styles %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/posts.css">
 {% endblock styles %}
 
-{% block conteudo %}
+{% block conteudo_esquerdo %}
   {% load pagination_tags %}
   {% autopaginate posts 5 %}
   {% for post in posts %}
@@ -23,7 +25,24 @@
           {% endif %}
         {% endfor %}
       {% endif %}
+      {% get_comment_count for post as contador_comentarios %} <br/><br/>
+      {% if contador_comentarios %}
+        <a href="{{ post.id }}">{{ contador_comentarios }} comentários.</a>
+      {% else %}
+        <a href="{{ post.id }}">Nenhum comentário ainda.</a>
+      {% endif %}
     </div>
   {% endfor %}
   {% paginate %}
-{% endblock conteudo %}
+{% endblock conteudo_esquerdo %}
+
+{% block conteudo_direito %}
+  <div id="direita">
+    <div id="nuvem">
+      <p>Nuvem de tags</p>
+      {% for tag in tags %}
+        <a href="{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock conteudo_direito %}

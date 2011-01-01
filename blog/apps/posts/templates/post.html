@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 
+{% load comments %}
+
 {% block styles %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/post.css">
 {% endblock styles %}
 
-{% block conteudo %}
+{% block conteudo_esquerdo %}
   <div id="post">
     <a id="titulo" href="{{ post.id }}"><h1>{{ post.titulo }}</h1></a>
     {{ post.conteudo|linebreaks }}
@@ -21,4 +23,32 @@
       {% endfor %}
     {% endif %}
   </div>
-{% endblock conteudo %}
+  <div id="comentario">
+    <h3>Comentários</h3>
+    
+    {% get_comment_list for post as comentarios %}
+    {% for comentario in comentarios %}
+      Nome: {{ comentario.name }} <br/>
+      {% if comentario.url %}
+        URL: {{ comentario.url }} <br/>
+      {% endif %}
+      {{ comentario.comment|linebreaks }}
+      <hr/>
+    {% endfor %}
+
+    <h3>Envie seu comentário!</h3>
+    {% render_comment_form for post %}
+    
+  </div>
+{% endblock conteudo_esquerdo %}
+
+{% block conteudo_direito %}
+  <div id="direita">
+    <div id="nuvem">
+      <p>Nuvem de tags</p>
+      {% for tag in tags %}
+        <a href="{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock conteudo_direito %}

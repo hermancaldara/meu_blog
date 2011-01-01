@@ -6,7 +6,7 @@
     <meta name="keywords" content="Herman Caldara, site, blog, desenvolvimento, programação"/>
     <meta name="author" content="Herman Caldara" />
     
-    <title>{% block title %}Blog do Herman Caldara{% endblock title %}</title>
+    <title>{% block titulo %}Blog do Herman Caldara{% endblock titulo %}</title>
     
     {% block styles %}
       <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/base.css">
@@ -32,8 +32,14 @@
         </div>
       </div>
       <div id="conteudo">
-        {% block conteudo %}
-        {% endblock conteudo %}
+        <div id="esquerda">
+          {% block conteudo_esquerdo %}
+          {% endblock conteudo_esquerdo %}
+        </div>
+        
+        {% block conteudo_direito %}
+        {% endblock conteudo_direito %}
+        
       </div>
       <div id="rodape">
         © Copyright 2010 por Herman Caldara

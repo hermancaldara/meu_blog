@@ -13,3 +13,34 @@
 #post a:hover {
     color: gray;
 }
+
+#comentario {
+    margin-top: 50px;
+}
+
+#comentario p {
+    overflow: hidden;
+}
+
+#comentario form label {
+    display: block;
+}
+
+#comentario form input[type="text"] {
+    width: 300px;
+}
+
+#direita {
+    position: relative;
+    width: 150px;  
+    float: left;
+}
+
+#nuvem a:link, #nuvem a:visited {
+    font-size: 12px;
+    color: black;
+}
+
+#nuvem a:hover {
+    color: gray;
+}
