@@ -1,3 +1,5 @@
 django
 django-pagination
 django-taggit
+elementtree
+markdown

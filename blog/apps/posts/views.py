@@ -15,9 +15,10 @@ def pegar_todas_tags():
 def post(request, post_id):
     tags = pegar_todas_tags() 
     post = Post.objects.get(pk=post_id)
+    html_post= post.body_html()
     return render_to_response(
         'post.html',
-        {'post': post, 'tags': tags},
+        {'post': post, 'tags': tags, 'html_post': html_post},
         context_instance = RequestContext(request),
     )
 

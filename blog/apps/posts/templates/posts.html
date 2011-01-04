@@ -2,6 +2,8 @@
 
 {% load comments %}
 
+{% load markup %}
+
 {% block estilo %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/posts.css">
@@ -13,7 +15,7 @@
   {% for post in posts %}
     <div id="post">
       <a id="titulo" href="{{ post.id }}"><h1>{{ post.titulo }}</h1></a>
-      {{ post.conteudo|linebreaks }}
+      {{ post.body_html|markdown|linebreaks }}
       {{ post.publicacao|timesince }} 
       {% if post.tags.all %}
         | 
