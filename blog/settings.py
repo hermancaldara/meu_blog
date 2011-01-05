@@ -81,7 +81,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.comments',
-    'django.contrib.markup',
     'posts',
     'contato',
     'pagination',
