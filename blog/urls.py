@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     (r'^comentarios/', include('django.contrib.comments.urls')),
     (r'^contato/', include('contato.urls')),
     (r'^sobre/', direct_to_template, {'template': 'sobre.html'}),
+    (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'templates/js'}),
     (r'^site_media/(.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 )
