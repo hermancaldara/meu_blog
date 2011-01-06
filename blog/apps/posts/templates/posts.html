@@ -12,7 +12,7 @@
   {% autopaginate posts 5 %}
   {% for post in posts %}
     <div id="post">
-      <a id="titulo" href="{{ post.id }}"><h1>{{ post.titulo }}</h1></a>
+      <a id="titulo" href="{{ post.get_absolute_url }}"><h1>{{ post.titulo }}</h1></a>
       {{ post.conteudo|safe }}
       {{ post.publicacao|timesince }} 
       {% if post.tags.all %}
@@ -27,9 +27,9 @@
       {% endif %}
       {% get_comment_count for post as contador_comentarios %} <br/><br/>
       {% if contador_comentarios %}
-        <a href="{{ post.id }}">{{ contador_comentarios }} comentários.</a>
+        <a href="{{ post.get_absolute_url }}">{{ contador_comentarios }} comentários.</a>
       {% else %}
-        <a href="{{ post.id }}">Nenhum comentário ainda.</a>
+        <a href="{{ post.get_absolute_url }}">Nenhum comentário ainda.</a>
       {% endif %}
     </div>
   {% endfor %}

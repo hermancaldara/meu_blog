@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.shortcuts import get_object_or_404
 from models import Post
 
 def pegar_todas_tags():
@@ -12,9 +13,9 @@ def pegar_todas_tags():
 
     return tags
 
-def post(request, post_id):
+def post(request, slug):
     tags = pegar_todas_tags() 
-    post = Post.objects.get(pk=post_id)
+    post = get_object_or_404(Post, slug=slug)
 
     return render_to_response(
         'post.html',

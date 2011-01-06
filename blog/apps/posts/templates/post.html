@@ -9,7 +9,7 @@
 
 {% block conteudo_esquerdo %}
   <div id="post">
-    <a id="titulo" href="{{ post.id }}"><h1>{{ post.titulo }}</h1></a>
+    <a id="titulo" href="{{ post.get_absolute_url }}"><h1>{{ post.titulo }}</h1></a>
     {{ post.conteudo|safe }}
     {{ post.publicacao|timesince }} 
     {% if post.tags.all %}
