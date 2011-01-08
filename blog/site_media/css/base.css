@@ -1,57 +1,134 @@
 body {
+    margin: 0;
+    padding: 0;
+    background-image: url("/site_media/imagens/bg.gif");
     font-family: Monaco, Arial;
 }
 
 #tudo {
     margin: 40px auto;
-    width: 700px;  
+    width: 900px;  
 }
 
 #topo {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #topo #logo span {
     font-size: 60px;
 }
 
-#menu {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
-#menu ul {
-    padding: 0;
-    list-style: none;
-    text-align: center;
-}
-
-#menu ul li {
-    display: inline;
-}
-
-#menu ul li a {
-    text-decoration: none;
-}
-
-#menu ul li a:link, #menu ul li a:visited {
-    color: black;
-}
-
-#menu ul li a:hover {
-    color: gray;
-    text-decoration: underline;
-}
-
 #esquerda {
     position: relative;
-    width: 500px;
+    width: 700px;
     float: left;
 }
 
+#direita {
+    position: relative;
+    width: 195px;  
+    float: left;
+    border-left: 1px solid black;
+}
+
+#direita #busca {
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#direita #busca #titulo {
+    font-size: 30px;
+    margin: 0 0 15px 0;
+}
+
+#direita #principal {
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
+
+#direita #principal #titulo {
+    font-size: 30px;
+    margin: 0 0 15px 0;
+}
+
+#direita #principal ul {
+    margin: 0;
+    padding: 0;
+}
+
+#direita #principal ul li {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#direita #principal ul li a:link, #direita #principal ul li a:visited {
+    padding: 10px 0 12px 40px;
+    color: black;
+    text-decoration: none;
+}
+
+#direita #principal ul li a:hover {
+    text-decoration: underline;
+}
+
+#direita #principal ul #home {
+    background: url("/site_media/imagens/home.png") no-repeat left center;
+}
+
+#direita #principal ul #sobre {
+    background: url("/site_media/imagens/sobre.png") no-repeat left center;
+}
+
+#direita #principal ul #contato {
+    background: url("/site_media/imagens/contato.png") no-repeat left center;
+}
+
+#direita #social {
+    margin-left: 10px;
+    margin-bottom: 30px;    
+}
+
+#direita #social #titulo {
+    font-size: 30px;
+    margin: 0 0 15px 0;
+}
+
+#direita #social ul {
+    margin: 0;
+    padding: 0;
+}
+
+#direita #social ul li {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#direita #social ul li a:link, #direita #social ul li a:visited {
+    padding: 10px 0 12px 40px;
+    color: black;
+    text-decoration: none;
+}
+
+#direita #social ul li a:hover {
+    text-decoration: underline;
+}
+
+#direita #social ul #twitter {
+    background: url("/site_media/imagens/twitter.png") no-repeat left center;
+}
+
+#direita #social ul #github {
+    background: url("/site_media/imagens/github.png") no-repeat left center;
+}
+
+#direita #social ul #linkedin {
+    background: url("/site_media/imagens/linkedin.png") no-repeat left center;
+}
+
 #rodape {
-    margin-top: 20px;
     font-size: 10px;
     text-align: center;
     clear: both;
+    padding-top: 20px;
 }

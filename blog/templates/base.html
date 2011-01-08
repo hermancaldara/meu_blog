@@ -21,15 +21,6 @@
         <div id="logo">
             <span>hermancaldara.com</span>
         </div>
-        <div id="menu">
-          <ul>
-            <li><a href="/">Home</a> //</li>
-            <li><a href="/projetos">Projetos</a> //</li>
-            <li><a href="/social">Social</a> //</li>
-            <li><a href="/sobre">Sobre</a> //</li>
-            <li><a href="/contato">Contato</a></li>
-          </ul>
-        </div>
       </div>
       <div id="conteudo">
         <div id="esquerda">
@@ -37,8 +28,31 @@
           {% endblock conteudo_esquerdo %}
         </div>
         
-        {% block conteudo_direito %}
-        {% endblock conteudo_direito %}
+        <div id="direita">
+          <div id="busca">
+            <p id="titulo">Busca</p>
+            <input type="text" />
+          </div>
+          <div id="principal">
+            <p id="titulo">Principal</p>
+            <ul>
+              <li><a id="home" href="/">Home</a></li>
+              <li><a id="sobre" href="/sobre">Sobre</a></li>
+              <li><a id="contato" href="/contato">Contato</a></li>
+            </ul>
+          </div>
+          <div id="social">
+            <p id="titulo">Social</p>
+            <ul>
+              <li><a id="twitter" target="_blank" href="http://www.twitter.com/hermancaldara">Twitter</a></li>
+              <li><a id="github" target="_blank" href="http://github.com/hermancaldara">GitHub</a></li>
+              <li><a id="linkedin" target="_blank" href="http://br.linkedin.com/in/hermancaldara">LinkedIn</a></li>
+            </ul>
+          </div>
+          
+          {% block conteudo_direito %}
+          {% endblock conteudo_direito %}
+        </div>
         
       </div>
       <div id="rodape">
@@ -47,4 +61,3 @@
     </div>
   </body>
 </html>
-

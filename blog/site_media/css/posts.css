@@ -18,6 +18,16 @@
     color: gray;
 }
 
+#nuvem {
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+#nuvem #titulo {
+    font-size: 22px;
+    margin: 0 0 15px 0;
+}
+
 #nuvem a:link, #nuvem a:visited {
     font-size: 12px;
     color: black;
@@ -38,10 +48,4 @@
 
 .pagination a:hover {
     color: gray;
-}
-
-#direita {
-    position: relative;
-    width: 150px;  
-    float: left;
 }

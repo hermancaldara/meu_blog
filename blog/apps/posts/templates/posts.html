@@ -13,23 +13,23 @@
   {% for post in posts %}
     <div id="post">
       <a id="titulo" href="{{ post.get_absolute_url }}"><h1>{{ post.titulo }}</h1></a>
+      {{ post.publicacao }} 
       {{ post.conteudo|safe }}
-      {{ post.publicacao|timesince }} 
-      {% if post.tags.all %}
-        | 
-        {% for tag in post.tags.iterator %}
-          {% if not forloop.last %}
-            <a href="{{ tag.name }}">{{ tag.name }}</a> -
-          {% else %}      
-            <a href="{{ tag.name }}">{{ tag.name }}</a>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
-      {% get_comment_count for post as contador_comentarios %} <br/><br/>
+      {% get_comment_count for post as contador_comentarios %}
       {% if contador_comentarios %}
         <a href="{{ post.get_absolute_url }}">{{ contador_comentarios }} comentários.</a>
       {% else %}
         <a href="{{ post.get_absolute_url }}">Nenhum comentário ainda.</a>
+      {% endif %}
+      {% if post.tags.all %}
+        | 
+        {% for tag in post.tags.iterator %}
+          {% if not forloop.last %}
+            <a href="/tags/{{ tag.name }}">{{ tag.name }}</a> -
+          {% else %}      
+            <a href="/tags/{{ tag.name }}">{{ tag.name }}</a>
+          {% endif %}
+        {% endfor %}
       {% endif %}
     </div>
   {% endfor %}
@@ -37,12 +37,10 @@
 {% endblock conteudo_esquerdo %}
 
 {% block conteudo_direito %}
-  <div id="direita">
-    <div id="nuvem">
-      <p>Nuvem de tags</p>
-      {% for tag in tags %}
-        <a href="{{ tag }}">{{ tag }}</a>
-      {% endfor %}
-    </div>
+  <div id="nuvem">
+    <p id="titulo">Nuvem de tags</p>
+    {% for tag in tags %}
+      <a href="/tags/{{ tag }}">{{ tag }}</a>
+    {% endfor %}
   </div>
 {% endblock conteudo_direito %}
