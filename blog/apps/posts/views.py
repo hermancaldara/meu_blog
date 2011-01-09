@@ -32,3 +32,12 @@ def posts(request):
         {'posts': posts, 'tags': tags},
         context_instance = RequestContext(request),
     )
+    
+def posts_por_tag(request, tag):
+    posts = Post.objects.filter(tags__name__in=[tag])
+
+    return render_to_response(
+        'posts_por_tag.html',
+        {'posts': posts},
+        context_instance = RequestContext(request),
+    )

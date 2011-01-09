@@ -1,0 +1,51 @@
+#post {
+    margin-bottom: 50px;
+}
+
+#post #titulo {
+    color: black;    
+}
+
+#post #titulo:hover {
+    color: gray;    
+}
+
+#post a:link, #post a:visited {
+    color: black;
+}
+
+#post a:hover {
+    color: gray;
+}
+
+#nuvem {
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+#nuvem #titulo {
+    font-size: 22px;
+    margin: 0 0 15px 0;
+}
+
+#nuvem a:link, #nuvem a:visited {
+    font-size: 12px;
+    color: black;
+}
+
+#nuvem a:hover {
+    color: gray;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    color: black;
+}
+
+.pagination a:hover {
+    color: gray;
+}
