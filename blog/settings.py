@@ -81,8 +81,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
     'django.contrib.comments',
-    'posts',
-    'contato',
+    'apps.posts',
+    'apps.contato',
     'pagination',
     'taggit',
 )

@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('contato.views',
+urlpatterns = patterns('apps.contato.views',
     (r'^', 'contato')
 )

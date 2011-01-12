@@ -8,9 +8,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
-    (r'^', include('posts.urls')),
+    (r'^', include('apps.posts.urls')),
     (r'^comentarios/', include('django.contrib.comments.urls')),
-    (r'^contato/', include('contato.urls')),
+    (r'^contato/', include('apps.contato.urls')),
     (r'^sobre/', direct_to_template, {'template': 'sobre.html'}),
     (r'^js/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'templates/js'}),
     (r'^site_media/(.*)$', 'django.views.static.serve',
