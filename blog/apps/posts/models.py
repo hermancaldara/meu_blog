@@ -26,7 +26,7 @@ class Post(models.Model):
         return self.titulo
         
     def get_absolute_url(self):
-        return reverse('posts.views.post', kwargs={'slug': self.slug})
+        return reverse('apps.posts.views.post', kwargs={'slug': self.slug})
 
 
 def post_pre_save(signal, instance, sender, **kwargs):
