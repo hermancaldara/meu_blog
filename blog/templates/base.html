@@ -31,7 +31,10 @@
         <div id="direita">
           <div id="busca">
             <p id="titulo">Busca</p>
-            <input type="text" />
+            <form id="busca" action="/busca" method="post">
+              {% csrf_token %}
+              <input type="text" name="busca" size="15"/>&nbsp;<button type="submit">&nbsp;</button>
+            </form>
           </div>
           <div id="principal">
             <p id="titulo">Principal</p>

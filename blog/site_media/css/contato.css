@@ -1,3 +1,8 @@
-form input[type="text"] {
+form#busca input[type="text"] {
+    width: 139px;
+}
+
+form#contato input[type="text"] {
     width: 300px;
 }
+

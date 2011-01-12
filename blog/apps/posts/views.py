@@ -2,16 +2,8 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.shortcuts import get_object_or_404
 from models import Post
+from utils import pegar_todas_tags
 
-def pegar_todas_tags():
-    tags = list()
-    posts = Post.objects.all()
-    for post in posts:
-        for tag in post.tags.iterator():
-            tags.append(tag.name)
-    tags = list(set(tags))
-
-    return tags
 
 def post(request, slug):
     tags = pegar_todas_tags() 
@@ -38,6 +30,26 @@ def posts_por_tag(request, tag):
 
     return render_to_response(
         'posts_por_tag.html',
+        {'posts': posts},
+        context_instance = RequestContext(request),
+    )
+    
+def busca(request):
+    todos_posts = Post.objects.all()
+    posts = []
+    for post in todos_posts:
+        try:
+            if request.POST['busca'] != '':
+                del request.session['busca']
+                request.session['busca'] = request.POST['busca']
+                if request.POST['busca'].lower() in post.conteudo.lower():
+                    posts.append(Post.objects.get(id=post.id))
+        except:
+            if request.session['busca'].lower() in post.conteudo.lower():
+                posts.append(Post.objects.get(id=post.id))
+
+    return render_to_response(
+        'busca.html',
         {'posts': posts},
         context_instance = RequestContext(request),
     )

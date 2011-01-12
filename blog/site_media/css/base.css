@@ -42,6 +42,13 @@ body {
     margin: 0 0 15px 0;
 }
 
+#direita #busca button[type="submit"] {
+    background: url("/site_media/imagens/lupa.png") no-repeat transparent;
+    width: 16px;
+    height: 16px;
+    border: none;
+}
+
 #direita #principal {
     margin-left: 10px;
     margin-bottom: 30px;

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load comments %}
+
+{% block estilo %}
+  {{ block.super }}
+  <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/busca.css">
+{% endblock estilo %}
+
+{% block conteudo_esquerdo %}
+  {% load pagination_tags %}
+  {% autopaginate posts 5 %}
+  {% if posts %}
+    {% for post in posts %}
+      <div id="post">
+        <a id="titulo" href="{{ post.get_absolute_url }}"><h1>{{ post.titulo }}</h1></a>
+        {{ post.publicacao }} 
+        {{ post.conteudo|safe }}
+        {% get_comment_count for post as contador_comentarios %}
+        {% if contador_comentarios %}
+          <a href="{{ post.get_absolute_url }}">{{ contador_comentarios }} comentários.</a>
+        {% else %}
+          <a href="{{ post.get_absolute_url }}">Nenhum comentário ainda.</a>
+        {% endif %}
+        {% if post.tags.all %}
+          | 
+          {% for tag in post.tags.iterator %}
+            {% if not forloop.last %}
+              <a href="/tag/{{ tag.name }}">{{ tag.name }}</a> -
+            {% else %}      
+              <a href="/tag/{{ tag.name }}">{{ tag.name }}</a>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+    {% endfor %}
+    {% paginate %}
+  {% else %}
+    <h1>A busca não retornou resultados!</h1>
+  {% endif %}
+{% endblock conteudo_esquerdo %}
+
+{% block conteudo_direito %}
+  <div id="nuvem">
+    <p id="titulo">Nuvem de tags</p>
+    {% for tag in tags %}
+      <a href="/tag/{{ tag }}">{{ tag }}</a>
+    {% endfor %}
+  </div>
+{% endblock conteudo_direito %}
