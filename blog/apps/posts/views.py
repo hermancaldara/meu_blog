@@ -40,7 +40,6 @@ def busca(request):
     for post in todos_posts:
         try:
             if request.POST['busca'] != '':
-                del request.session['busca']
                 request.session['busca'] = request.POST['busca']
                 if request.POST['busca'].lower() in post.conteudo.lower():
                     posts.append(Post.objects.get(id=post.id))
