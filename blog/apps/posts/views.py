@@ -35,6 +35,7 @@ def posts_por_tag(request, tag):
     )
     
 def busca(request):
+    tags = pegar_todas_tags()
     todos_posts = Post.objects.all()
     posts = []
     for post in todos_posts:
@@ -49,6 +50,6 @@ def busca(request):
 
     return render_to_response(
         'busca.html',
-        {'posts': posts},
+        {'posts': posts, 'tags': tags},
         context_instance = RequestContext(request),
     )

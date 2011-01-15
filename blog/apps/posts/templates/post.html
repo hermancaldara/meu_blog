@@ -44,7 +44,7 @@
 
 {% block conteudo_direito %}
   <div id="nuvem">
-    <p>Nuvem de tags</p>
+    <p id="titulo">Nuvem de tags</p>
     {% for tag in tags %}
       <a href="/tag/{{ tag }}">{{ tag }}</a>
     {% endfor %}
