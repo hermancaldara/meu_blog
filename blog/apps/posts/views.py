@@ -39,6 +39,11 @@ def busca(request):
     todos_posts = Post.objects.all()
     posts = []
     for post in todos_posts:
+        while post.conteudo.count('<img') != 0:
+            posicao_inicial_imagem = post.conteudo.find('<img')
+            posicao_final_imagem = post.conteudo.find('/>')
+            tag_imagem = post.conteudo[posicao_inicial_imagem: posicao_final_imagem + 2]
+            post.conteudo = post.conteudo.replace(tag_imagem, "")
         try:
             if request.POST['busca'] != '':
                 request.session['busca'] = request.POST['busca']
