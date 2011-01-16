@@ -87,6 +87,10 @@ body {
     background: url("/site_media/imagens/sobre.png") no-repeat left center;
 }
 
+#direita #principal ul #rss {
+    background: url("/site_media/imagens/rss.png") no-repeat left center;
+}
+
 #direita #principal ul #contato {
     background: url("/site_media/imagens/contato.png") no-repeat left center;
 }

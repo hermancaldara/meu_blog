@@ -10,7 +10,7 @@ def post(request, slug):
     post = get_object_or_404(Post, slug=slug)
 
     return render_to_response(
-        'post.html',
+        'posts/post.html',
         {'post': post, 'tags': tags},
         context_instance = RequestContext(request),
     )
@@ -20,7 +20,7 @@ def posts(request):
     posts = Post.objects.all()
     
     return render_to_response(
-        'posts.html',
+        'posts/posts.html',
         {'posts': posts, 'tags': tags},
         context_instance = RequestContext(request),
     )
@@ -29,7 +29,7 @@ def posts_por_tag(request, tag):
     posts = Post.objects.filter(tags__name__in=[tag])
 
     return render_to_response(
-        'posts_por_tag.html',
+        'posts/posts_por_tag.html',
         {'posts': posts},
         context_instance = RequestContext(request),
     )
@@ -54,7 +54,7 @@ def busca(request):
                 posts.append(Post.objects.get(id=post.id))
 
     return render_to_response(
-        'busca.html',
+        'posts/busca.html',
         {'posts': posts, 'tags': tags},
         context_instance = RequestContext(request),
     )
