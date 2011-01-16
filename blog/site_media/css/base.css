@@ -15,8 +15,10 @@ body {
     margin-bottom: 20px;
 }
 
-#topo #logo span {
+#topo #logo a {
     font-size: 60px;
+    text-decoration: none;
+    color: black;
 }
 
 #esquerda {

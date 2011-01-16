@@ -6,6 +6,11 @@
     color: gray;    
 }
 
+#post #conteudo {
+    font-size: 14px;
+    text-align: justify;
+}
+
 #post a:link, #post a:visited {
     color: black;
 }
