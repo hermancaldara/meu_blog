@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load markup %}
+
 {% load comments %}
 
 {% block estilo %}
@@ -15,7 +17,7 @@
       <a id="titulo" href="{{ post.get_absolute_url }}"><h1>{{ post.titulo }}</h1></a>
       {{ post.publicacao }} 
       <div id="conteudo">
-        {{ post.conteudo|safe }}
+        {{ post.conteudo|restructuredtext|safe }}
       </div>
       {% get_comment_count for post as contador_comentarios %}
       {% if contador_comentarios %}
