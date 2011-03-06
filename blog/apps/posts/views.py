@@ -26,12 +26,12 @@ def posts(request):
     )
     
 def posts_por_tag(request, tag):
-    import pdb; pdb.set_trace()
+    tags = pegar_todas_tags()
     posts = Post.objects.filter(tags__name__in=[tag])
 
     return render_to_response(
         'posts/posts_por_tag.html',
-        {'posts': posts},
+        {'posts': posts, 'tags': tags},
         context_instance = RequestContext(request),
     )
     

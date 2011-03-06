@@ -23,15 +23,16 @@
 	    <div id="header_inner" class="fixed">
 
 		    <div id="logo">
-			    <h1><span>herman caldara</span>1.0</h1>
-<!--			    <h2>By NodeThirtyThree Design</h2>-->
+			    <h1><a href="/"><span>herman caldara</span></a></h1>
 		    </div>
 		
 		    <div id="menu">
 			    <ul>
-				    <li><a href="/" class="active">Blog</a></li>
-				    <li><a href="/sobre">Sobre</a></li>
-				    <li><a href="/contato">Contato</a></li>
+			      {% block menu %}
+				      <li><a href="/" class="active">Blog</a></li>
+				      <li><a href="/sobre">Sobre</a></li>
+				      <li><a href="/contato">Contato</a></li>
+				    {% endblock menu %}
 			    </ul>
 		    </div>
 		

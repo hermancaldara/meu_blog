@@ -1,11 +1,17 @@
 {% extends "base.html" %}
 
+{% block titulo %}Contato - {{ block.super }}{% endblock titulo %}
+
 {% block estilo %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/contato.css">
 {% endblock estilo %}
 
-{% block titulo %}Contato - {{ block.super }}{% endblock titulo %}
+{% block menu %}
+  <li><a href="/">Blog</a></li>
+  <li><a href="/sobre">Sobre</a></li>
+  <li><a href="/contato" class="active">Contato</a></li>
+{% endblock menu %}
 
 {% block conteudo_esquerdo %}
   {% if contato_realizado %}
