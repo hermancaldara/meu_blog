@@ -80,7 +80,6 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
-    'django.contrib.comments',
     'django.contrib.syndication',
     'django.contrib.markup',
     'apps.posts',

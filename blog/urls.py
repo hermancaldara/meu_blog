@@ -10,7 +10,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
     (r'^', include('apps.posts.urls')),
-    (r'^comentarios/', include('django.contrib.comments.urls')),
     (r'^contato/$', include('apps.contato.urls')),
     (r'^sobre/$', direct_to_template, {'template': 'sobre.html'}),
     (r'rss/(?P<url>.*)/$', 'django.contrib.syndication.views.feed',

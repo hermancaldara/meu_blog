@@ -19,7 +19,7 @@ class Post(models.Model):
         default = datetime.now,
         blank = True,
     )
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
     slug = models.SlugField(max_length=100, blank=True, unique=True)
 
     def __unicode__(self):

@@ -19,22 +19,6 @@
     color: gray;
 }
 
-#comentario {
-    margin-top: 50px;
-}
-
-#comentario p {
-    overflow: hidden;
-}
-
-#comentario form label {
-    display: block;
-}
-
-#comentario form input[type="text"] {
-    width: 300px;
-}
-
 #nuvem {
     margin-bottom: 30px;
     margin-left: 10px;

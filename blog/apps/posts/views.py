@@ -26,6 +26,7 @@ def posts(request):
     )
     
 def posts_por_tag(request, tag):
+    import pdb; pdb.set_trace()
     posts = Post.objects.filter(tags__name__in=[tag])
 
     return render_to_response(

@@ -2,8 +2,6 @@
 
 {% load markup %}
 
-{% load comments %}
-
 {% block estilo %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/post.css">
@@ -27,23 +25,6 @@
         {% endif %}
       {% endfor %}
     {% endif %}
-  </div>
-  <div id="comentario">
-    <h3>Comentários</h3>
-    
-    {% get_comment_list for post as comentarios %}
-    {% for comentario in comentarios %}
-      Nome: {{ comentario.name }} <br/>
-      {% if comentario.url %}
-        URL: {{ comentario.url }} <br/>
-      {% endif %}
-      {{ comentario.comment|linebreaks }}
-      <hr/>
-    {% endfor %}
-
-    <h3>Envie seu comentário!</h3>
-    {% render_comment_form for post %}
-    
   </div>
 {% endblock conteudo_esquerdo %}
 

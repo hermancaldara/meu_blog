@@ -2,8 +2,6 @@
 
 {% load markup %}
 
-{% load comments %}
-
 {% block estilo %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/posts_por_tag.css">
@@ -20,12 +18,6 @@
       <div id="conteudo">
         {{ post.conteudo|restructuredtext|safe }}
       </div>
-      {% get_comment_count for post as contador_comentarios %}
-      {% if contador_comentarios %}
-        <a href="{{ post.get_absolute_url }}">{{ contador_comentarios }} comentários.</a>
-      {% else %}
-        <a href="{{ post.get_absolute_url }}">Nenhum comentário ainda.</a>
-      {% endif %}
       {% if post.tags.all %}
         | Tags: 
         {% for tag in post.tags.iterator %}
