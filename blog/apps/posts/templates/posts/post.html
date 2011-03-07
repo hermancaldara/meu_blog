@@ -4,6 +4,8 @@
 
 {% load disqus_tags %}
 
+{% load taggit_extras %}
+
 {% block estilo %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/post.css">
@@ -42,8 +44,9 @@
 {% block conteudo_direito %}
   <div id="nuvem">
     <p id="titulo">Nuvem de tags</p>
-    {% for tag in tags %}
-      <a href="/tag/{{ tag }}">{{ tag }}</a>
-    {% endfor %}
+      {% get_tagcloud as tags %}
+      {% for tag in tags %}
+        <a href='/tag/{{ tag.name }}'><font size={{ tag.weight|floatformat:0 }}>{{tag}}</font></a>
+      {% endfor %}
   </div>
 {% endblock conteudo_direito %}

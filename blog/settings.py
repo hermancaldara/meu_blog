@@ -87,6 +87,7 @@ INSTALLED_APPS = (
     'pagination',
     'taggit',
     'disqus',
+    'taggit_templatetags',
 )
 
 EMAIL_HOST = 'smtp.gmail.com'
