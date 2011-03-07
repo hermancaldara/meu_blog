@@ -3,7 +3,7 @@ PIP = pip
 
 tudo: dependências
 
-dependências: django django-pagination django-taggit should_dsl pygments docutils
+dependências: django django-pagination django-taggit should_dsl pygments docutils disqus
 
 django:
 	@$(PYTHON) -c 'import django' 2>/dev/null || $(PIP) install django
@@ -22,3 +22,6 @@ pygments:
 	
 docutils:
 	@$(PYTHON) -c 'import docutils' 2>/dev/null || $(PIP) install docutils
+	
+django-disqus:
+	@$(PYTHON) -c 'import disqus' 2>/dev/null || $(PIP) install django-disqus

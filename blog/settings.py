@@ -86,6 +86,7 @@ INSTALLED_APPS = (
     'apps.contato',
     'pagination',
     'taggit',
+    'disqus',
 )
 
 EMAIL_HOST = 'smtp.gmail.com'
@@ -94,3 +95,6 @@ EMAIL_HOST_PASSWORD = '123456'
 EMAIL_SUBJECT_PREFIX = '[RiceTeam]'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+DISQUS_API_KEY = 'F7dgJbuUWBJY5wLvWyLwWKV8JwLjpQlSNxEEdUkh3DNHeEnTqZuULkY8a6jzTzgI'
+DISQUS_WEBSITE_SHORTNAME = 'hermancaldara'

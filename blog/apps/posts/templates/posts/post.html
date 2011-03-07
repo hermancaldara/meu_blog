@@ -2,6 +2,8 @@
 
 {% load markup %}
 
+{% load disqus_tags %}
+
 {% block estilo %}
   {{ block.super }}
   <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}/css/post.css">
@@ -14,7 +16,8 @@
 		<h3><a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a></h3>
 		<ul class="post_info">
 			<li class="date">Postado em {{ post.publicacao }}</li>
-			<li class="comments"><a href="#">44 comments</a></li>
+			<li class="comments"><a href="{{ post.get_absolute_url }}#disqus_thread">Comentários</a></li>
+			{% disqus_num_replies %}
 			{% if post.tags.all %}
         | Tags: 
         {% for tag in post.tags.iterator %}
@@ -29,6 +32,9 @@
 		<div class="content">
 		  {{ post.conteudo|restructuredtext|safe }}
 		</div>
+		
+    {% disqus_dev %}    
+    {% disqus_show_comments %}		
 
 	</div>
 {% endblock conteudo_esquerdo %}
