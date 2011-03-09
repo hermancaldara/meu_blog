@@ -43,10 +43,16 @@
 
 {% block conteudo_direito %}
   <div id="nuvem">
-    <p id="titulo">Nuvem de tags</p>
-      {% get_tagcloud as tags %}
-      {% for tag in tags %}
-        <a href='/tag/{{ tag.name }}'><font size={{ tag.weight|floatformat:0 }}>{{tag}}</font></a>
-      {% endfor %}
+    <h4><span>Nuvem de</span> tags</h4>
+    {% get_tagcloud as tags %}
+    {% for tag in tags %}
+      <a href='/tag/{{ tag.name }}'><font size={{ tag.weight|floatformat:0 }}>{{tag}}</font></a>
+    {% endfor %}
+  </div>
+  <div id="ultimos_posts">
+    <h4><span>Últimos</span> posts</h4>
+    {% for post in ultimos_posts %}
+      <a href="{{ post.get_absolute_url }}">{{ post.titulo }}</a><br>
+    {% endfor %}
   </div>
 {% endblock conteudo_direito %}

@@ -8,30 +8,33 @@ from utils import pegar_todas_tags
 def post(request, slug):
     tags = pegar_todas_tags() 
     post = get_object_or_404(Post, slug=slug)
-
+    ultimos_posts = Post.objects.all()[:11]
+    
     return render_to_response(
         'posts/post.html',
-        {'post': post, 'tags': tags},
+        {'post': post, 'tags': tags, 'ultimos_posts': ultimos_posts},
         context_instance = RequestContext(request),
     )
 
 def posts(request):
     tags = pegar_todas_tags()
     posts = Post.objects.all()
+    ultimos_posts = Post.objects.all()[:11]
     
     return render_to_response(
         'posts/posts.html',
-        {'posts': posts, 'tags': tags},
+        {'posts': posts, 'tags': tags, 'ultimos_posts': ultimos_posts},
         context_instance = RequestContext(request),
     )
     
 def posts_por_tag(request, tag):
     tags = pegar_todas_tags()
     posts = Post.objects.filter(tags__name__in=[tag])
+    ultimos_posts = Post.objects.all()[:11]
 
     return render_to_response(
         'posts/posts_por_tag.html',
-        {'posts': posts, 'tags': tags},
+        {'posts': posts, 'tags': tags, 'ultimos_posts': ultimos_posts},
         context_instance = RequestContext(request),
     )
     
